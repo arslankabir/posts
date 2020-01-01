@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block content %}
+    {% if post%}
+    <form method="POST" action = "." enctype="multipart/form-data">
+        <h1>Create a blog Post</h1>
+        {% csrf_token %}
+        {{ post.as_p }}
+    <input type="submit">
+    </form>
+    
+        {%else%}
+        <form method="POST" action="." enctype="multipart/form-data">
+            <h1>Create author</h1>
+            {% csrf_token %}
+            {{author.as_p}}
+            <input type="submit">
+        </form>
+        {%endif%}
+{%endblock content%}

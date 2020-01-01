@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>My Blog Posts <small><a href="/posts/CreatePost/">Create a new post</a></small></h1>
+    {% for post in all_posts %} 
+    <hr>
+    <div class="row">
+        <h2><a href="/posts/{{post.slug}}">{{ post.title }}</a></h2>
+        <img src="{{ post.image.url }}" class="image-responsive">
+    </div>
+    <div class="row">
+        <p>{{ post.description }}</p>  
+        <h2><small> Written by {{ post.author }}</small></h2>
+    </div>
+    <hr>
+
+        {% endfor %}
+{%endblock content%}
+
+    
+ 

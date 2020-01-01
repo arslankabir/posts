@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<hr>
+<h1>Post Details</h1>
+    <div class="row">
+        <h2>{{ post.title }}</h2>
+        <img src="{{ post.image.url }}" class="image-responsive">
+    </div>
+    
+    <div class="row">
+        <p>{{ post.description }}</p>  
+        <h2> <small> Written by {{ post.author }}</small></h2>
+        <pre class="row">
+        <button class="btn btn-outline-primary"><a href="/posts/">Go Back to All Post </a></button>
+        <button class="btn btn-outline-secondary"><a href="/posts/{{post.slug}}/update/"> Update </a></button>
+        <button type="button" class="btn btn-outline-danger"><a href="/posts/{{post.slug}}/delete/"> Delete </a></button>
+        </pre>
+</div>
+    <hr>
+
+{%endblock content%}
+
+    
